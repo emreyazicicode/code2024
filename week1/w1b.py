@@ -1,3 +1,4 @@
+import json
 import sys
 # week1.b
 
@@ -46,12 +47,29 @@ def isEmailRandom( email: str ) -> bool:
     if len(parts[0]) > 40: return False
     
     for spiderman in range(len(parts[0])-1):
-        print(spiderman, parts[0][spiderman] + parts[0][spiderman+1])
+        twoletter = parts[0][spiderman] + parts[0][spiderman+1]
+        
+        # twoletter ===> 'ya'
+        if twoletter not in PROBABILITIES:
+            PROBABILITIES[twoletter] = 0
+
+        PROBABILITIES[ twoletter ] = PROBABILITIES[ twoletter ] + 1
 
 
 
 
+for validemail in validemails:
+    if validemail != '':
+        # Transform the "text - email" into lowercase
+        validemail = validemail.lower()
+        isEmailRandom(validemail)
 
+
+
+with open('PROBABILITIES.json', 'w') as f:
+    json.dump(PROBABILITIES, f)
+
+print(PROBABILITIES)
 
 
 """
