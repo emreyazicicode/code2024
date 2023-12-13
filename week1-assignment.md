@@ -11,3 +11,8 @@ PRACTISE:
 - Write a function to calculate the sum of a list ([1,4,7] = 12)
 - Write a function to calculate factorial of a given number (3! = 3x2x1)
 - Write a function to return one of the [Rock, Paper, Scissors] randomly ('Rock')
+
+
+ADDITIONAL RESOURCES:
+https://pynative.com/python-if-else-and-for-loop-exercise-with-solutions/
+https://pynative.com/python-functions-exercise-with-solutions/
