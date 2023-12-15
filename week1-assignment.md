@@ -16,3 +16,10 @@ PRACTISE:
 ADDITIONAL RESOURCES:
 https://pynative.com/python-if-else-and-for-loop-exercise-with-solutions/
 https://pynative.com/python-functions-exercise-with-solutions/
+
+FOR THE WEEKEND:
+Check & Read the pages below
+- https://www.w3schools.com/python/python_ref_glossary.asp
+- https://www.w3schools.com/python/python_ref_exceptions.asp
+
+Write a function to convert between Volume units
