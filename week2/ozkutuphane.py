@@ -1,5 +1,9 @@
 
 Average = lambda Values: sum(Values) / len(Values)
+unique = lambda lst: list(set(lst))
+
+def flatten(xss):
+    return [x for xs in xss for x in xs]
 
 
 GRAVITY = 9.8
