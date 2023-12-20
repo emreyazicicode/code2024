@@ -118,5 +118,3 @@ below_avg_sales_per_person = [
 ]
 
 print(below_avg_sales_per_person)
-
-
