@@ -2,3 +2,8 @@ https://www.w3schools.com/python/ref_string_format.asp
 
 
 https://www.w3schools.com/python/
+
+
+
+For regex
+https://regex101.com/
