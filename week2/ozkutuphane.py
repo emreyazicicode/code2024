@@ -1,3 +1,29 @@
+import re
+
+swapped_datetime_regexes = {
+    r"(\d{4})-(\d{2})-(\d{2})": "%Y-%m-%d",                      
+    r"(\d{4})\.(\d{2})\.(\d{2})": "%Y.%m.%d",                      
+    r"(\d{2})\.(\d{2})\.(\d{4})": "%d.%m.%Y",
+    r"(\d{2})\-(\d{2})\-(\d{4})": "%d-%m-%Y",
+    r"(\d{1,2})\/(\d{1,2})\/(\d{4})": "%d/%m/%Y",
+    r"(\d{2})/(\d{2})/(\d{4})": "%d/%m/%Y",                      
+    r"(\d{2})/(\d{2})/(\d{4})": "%m/%d/%Y",                      
+    r"(\d{4})(\d{2})(\d{2})": "%Y%m%d",                          
+    r"(\w+) (\d{2}), (\d{4})": "%B %d, %Y",                      
+    r"(\d{2}) (\w+) (\d{4})": "%d %b %Y",                        
+    r"(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})": "%Y-%m-%dT%H:%M:%S", 
+    r"(\d{2}):(\d{2}):(\d{2})": "%H:%M:%S",                      
+    r"(\d{2}):(\d{2}) ([AP]M)": "%I:%M %p",                      
+    r"(\w+), (\d{2}) (\w+) (\d{4}) (\d{2}):(\d{2}):(\d{2})": "%a, %d %b %Y %H:%M:%S"
+}
+
+
+def findMatchingDatePattern( given: str ) -> str:
+    for r in swapped_datetime_regexes:
+        if re.match(r, given):
+            return r
+    return None
+
 
 Average = lambda Values: sum(Values) / len(Values)
 unique = lambda lst: list(set(lst))
