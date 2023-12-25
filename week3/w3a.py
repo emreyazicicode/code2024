@@ -99,6 +99,7 @@ ss1 = {
 
 class Talebe:
     #: Properties/Fields of Talebe
+    number: int = None
     isim: str = None
     soyisim: str = None
     dogum: datetime.date = None
@@ -109,12 +110,19 @@ class Talebe:
         #passedGrades ==> belongs to class Talebe
         return Average(self.notlar.values()) > 80
 
+    #def __str__( self ):
+    #    return f"{self.isim} {self.soyisim} {self.dogum}"
+
+    def __str__( self ):
+        return str(self.number)
 
 def passedGradesX( t: Talebe ) -> bool:
     return Average(t.notlar.values()) > 80
 
 
+
 spiderman = Talebe() # produced item
+spiderman.number = 12342
 spiderman.isim = 'Spider'
 spiderman.soyisim = 'Man'
 spiderman.dogum = datetime.date(2000, 1, 1)
@@ -124,6 +132,8 @@ spiderman.notlar = {
     'chemistry': 67,
     'grammer': 90,
 }
+
+print("spiderman.tostring", spiderman)
 
 print("spiderman.passedGrades()", spiderman.passedGrades( ))
 
@@ -211,8 +221,6 @@ class Department:
 
         return myeff1 / myeff2
         # return myeff1 - myeff2 / 1000.0
-    
-
 
 
 d1 = Department()
@@ -290,3 +298,30 @@ print("True")
 
 
 
+
+class Employee:
+    number: int = None
+    isim: str = None
+    departman: str = None
+
+    def __init__( self, givennumber: int, givenname: str ): #* MAGIC FUNCTION, initialize, construct
+        self.number = givennumber
+        self.isim = givenname
+
+    def __str__( self ):
+        return f"{self.number}: {self.isim}"
+
+
+emp1 = Employee(1234, 'Ahmet Yildiz')
+# Employee.__init__( emp1, 1234 )
+
+# ERROR emp2 = Employee()
+
+#* MUST, REQUIRED, COMPULSORY
+
+# emp1 = Employee()
+# emp1.isim = 'xzdafdsfs' #! FORGET
+
+print(emp1)
+
+#! ..... emp1. ==> ;;;;

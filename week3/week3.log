@@ -1,0 +1,13 @@
+INFO:root:Application started
+INFO:root:Application started
+INFO:root:Application started
+ERROR:root:Burada bir kere hata olustu
+10:52:30 - root - INFO - Talebe olustu Ahmet Yildiz, 123
+10:52:30 - root - INFO - Application started
+10:52:30 - root - ERROR - Burada bir kere hata olustu
+10:54:06 - root - INFO - Application started
+10:54:06 - root - INFO - Talebe olustu:Ahmet Yildiz, 123
+10:54:06 - root - ERROR - Burada bir kere hata olustu: division by zero
+10:55:33 - root - INFO - Application started
+10:55:33 - root - INFO - Talebe olustu:Ahmet Yildiz, 123
+10:55:33 - root - ERROR - Burada bir kere hata olustu: division by zero, a = 3, c = 0
