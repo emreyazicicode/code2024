@@ -1,0 +1,126 @@
+
+YAML
+
+settings:
+  REDIS_HOST: "localhost"
+  REDIS_PORT: 6379
+  APP_PORT: 5700
+  LOG_FILE: "app.log"
+  LOG_FORMAT: "%(asctime)s,%(msecs)d %(name)s %(levelname)s %(message)s"
+
+
+JSON
+settings['REDIS_HOST'] = 'localhost'
+settings['REDIS_PORT'] = 6379
+
+
+
+
+
+
+
+
+YAML
+students:
+	- student name: Ahmet
+	  age: 23
+	  gender: male
+	- student name: Berk
+	  age: 22
+	  gender: male
+	  
+
+
+JSON
+[
+	{"student name": "Ahmet", "age": 23, "gender"..},
+	{"student name": "Berk", "age": 22, "gender"},
+	{"student name": "Celal", "age": 22},
+	{"student name": "Mustafa, "age": 21}
+]
+
+
+XML
+<students>
+	<student>
+		<studentname>Ahmet</studentname>
+		<age>23</age>	
+	</student>
+	<student>
+		<studentname>BErk</studentname>
+		<age>22</age>	
+	</student>
+</students>
+
+
+
+
+
+
+Date, Country, ......
+
+Date = 2019-01-08, Country = USA, .....
+Date = 2019-01-08, Country = USA, .....
+
+
+
+
+
+
+www.xyz.com/robots.txt
+sitemap.xml
+
+
+
+
+<url>
+	<loc>https://www.haberler.com/guncel/arazi-anlasmazligi-nedeniyle-iki-ayri-olayda-silahli-saldirilar-16715005-haberi/</loc>
+	<news:news>
+		<news:publication>
+			<news:name>Haberler</news:name>
+			<news:language>tr</news:language>
+			</news:publication>
+			<news:publication_date>2024-01-09T08:16:25+03:00</news:publication_date>
+			<news:title><![CDATA[Arazi Anlaşmazlığı Nedeniyle İki Ayrı Olayda Silahlı Saldırılar]]></news:title>
+			<news:keywords><![CDATA[Çeşme, Haber, Son Dakika]]></news:keywords>
+	</news:news>
+	<lastmod>2024-01-09T08:17:00+03:00</lastmod>
+</url>
+
+
+
+
+
+
+class Student
+	name: str = None
+	marks: dict = {}
+	
+	def haveIpassed( self ) -> bool:
+		pass....
+		
+	def averageScore( self ) -> float:
+		....
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
