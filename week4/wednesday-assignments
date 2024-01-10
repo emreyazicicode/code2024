@@ -1,0 +1,9 @@
+
+Assignment:
+	a- Create an environment on your local PC (using anaconda, search on Internet to find how it is done)
+	b- Connect to redis at the ip address, 91.102.161.166
+	c- Set 'yourname' and 'your date of birth' as key and value in redis
+		example: 'EmreYazici' '05-05-1984'
+	d- Install networkx package on your local computer
+	e- Create a network of your close friends and their friends
+
