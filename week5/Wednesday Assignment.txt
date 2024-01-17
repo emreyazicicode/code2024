@@ -1,4 +1,13 @@
 Wednesday Assignment:
+
+1
 	Download https://www.kaggle.com/datasets/iamsouravbanerjee/customer-shopping-trends-dataset
 	Write a function to delete some of the values randomly for the dataset
 	Try to use filling methods to fill the dataset
+
+
+
+2
+	Download https://www.kaggle.com/datasets/nantonio/a-hotels-customers-dataset
+	Create a column of spoken languages of the given country, find the data on internet
+
