@@ -1,0 +1,4 @@
+Wednesday Assignment:
+	Download https://www.kaggle.com/datasets/iamsouravbanerjee/customer-shopping-trends-dataset
+	Write a function to delete some of the values randomly for the dataset
+	Try to use filling methods to fill the dataset
