@@ -1,0 +1,286 @@
+Code,Continent
+OWID_ABK,Asia
+AFG,Asia
+OWID_AKD,Asia
+ALA,Europe
+ALB,Europe
+DZA,Africa
+ASM,Oceania
+AND,Europe
+AGO,Africa
+AIA,North America
+ATA,Antarctica
+ATG,North America
+ARG,South America
+ARM,Asia
+ABW,North America
+AUS,Oceania
+AUT,Europe
+OWID_AUH,Europe
+AZE,Asia
+OWID_BAD,Europe
+BHS,North America
+BHR,Asia
+BGD,Asia
+BRB,North America
+OWID_BAV,Europe
+BLR,Europe
+BEL,Europe
+BLZ,North America
+BEN,Africa
+BMU,North America
+BTN,Asia
+BOL,South America
+BES,North America
+BIH,Europe
+BWA,Africa
+BVT,Antarctica
+BRA,South America
+IOT,Asia
+VGB,North America
+BRN,Asia
+BGR,Europe
+BFA,Africa
+BDI,Africa
+KHM,Asia
+CMR,Africa
+CAN,North America
+CPV,Africa
+CYM,North America
+CAF,Africa
+TCD,Africa
+OWID_CIS,Europe
+CHL,South America
+CHN,Asia
+CXR,Asia
+CCK,Asia
+COL,South America
+COM,Africa
+COG,Africa
+COK,Oceania
+CRI,North America
+CIV,Africa
+HRV,Europe
+CUB,North America
+CUW,North America
+CYP,Europe
+CZE,Europe
+OWID_CZS,Europe
+COD,Africa
+DNK,Europe
+DJI,Africa
+DMA,North America
+DOM,North America
+OWID_GDR,Europe
+TLS,Asia
+ECU,South America
+EGY,Africa
+SLV,North America
+GNQ,Africa
+ERI,Africa
+EST,Europe
+SWZ,Africa
+ETH,Africa
+OWID_ERE,Africa
+FLK,South America
+FRO,Europe
+FJI,Oceania
+FIN,Europe
+FRA,Europe
+GUF,South America
+PYF,Oceania
+ATF,Antarctica
+GAB,Africa
+GMB,Africa
+GEO,Asia
+DEU,Europe
+GHA,Africa
+GIB,Europe
+GRC,Europe
+GRL,North America
+GRD,North America
+GLP,North America
+GUM,Oceania
+GTM,North America
+GGY,Europe
+GIN,Africa
+GNB,Africa
+GUY,South America
+HTI,North America
+OWID_HAN,Europe
+HMD,Antarctica
+OWID_HSE,Europe
+OWID_HSG,Europe
+HND,North America
+HKG,Asia
+HUN,Europe
+ISL,Europe
+IND,Asia
+IDN,Asia
+IRN,Asia
+IRQ,Asia
+IRL,Europe
+IMN,Europe
+ISR,Asia
+ITA,Europe
+JAM,North America
+JPN,Asia
+JEY,Europe
+JOR,Asia
+KAZ,Asia
+KEN,Africa
+KIR,Oceania
+OWID_KRU,Asia
+OWID_KOS,Europe
+KWT,Asia
+KGZ,Asia
+LAO,Asia
+LVA,Europe
+LBN,Asia
+LSO,Africa
+LBR,Africa
+LBY,Africa
+LIE,Europe
+LTU,Europe
+LUX,Europe
+MAC,Asia
+MDG,Africa
+MWI,Africa
+MYS,Asia
+MDV,Asia
+MLI,Africa
+MLT,Europe
+MHL,Oceania
+MTQ,North America
+MRT,Africa
+MUS,Africa
+MYT,Africa
+OWID_MEC,Europe
+MEX,North America
+FSM,Oceania
+OWID_MOD,Europe
+MDA,Europe
+MCO,Europe
+MNG,Asia
+MNE,Europe
+MSR,North America
+MAR,Africa
+MOZ,Africa
+MMR,Asia
+OWID_NAG,Asia
+NAM,Africa
+NRU,Oceania
+NPL,Asia
+NLD,Europe
+ANT,North America
+NCL,Oceania
+NZL,Oceania
+NIC,North America
+NER,Africa
+NGA,Africa
+NIU,Oceania
+NFK,Oceania
+PRK,Asia
+MKD,Europe
+OWID_CYN,Asia
+MNP,Oceania
+NOR,Europe
+OMN,Asia
+PAK,Asia
+PLW,Oceania
+PSE,Asia
+PAN,North America
+PNG,Oceania
+PRY,South America
+OWID_PMA,Europe
+PER,South America
+PHL,Asia
+PCN,Oceania
+POL,Europe
+PRT,Europe
+PRI,North America
+QAT,Asia
+OWID_RVN,Asia
+REU,Africa
+ROU,Europe
+RUS,Europe
+RWA,Africa
+BLM,North America
+SHN,Africa
+KNA,North America
+LCA,North America
+MAF,North America
+SPM,North America
+VCT,North America
+WSM,Oceania
+SMR,Europe
+STP,Africa
+SAU,Asia
+OWID_SAX,Europe
+SEN,Africa
+SRB,Europe
+OWID_SRM,Europe
+OWID_SEK,Europe
+SYC,Africa
+SLE,Africa
+SGP,Asia
+SXM,North America
+SVK,Europe
+SVN,Europe
+SLB,Oceania
+SOM,Africa
+OWID_SML,Africa
+ZAF,Africa
+SGS,South America
+KOR,Asia
+OWID_SOS,Asia
+SSD,Africa
+ESP,Europe
+LKA,Asia
+SDN,Africa
+SUR,South America
+SJM,Europe
+SWE,Europe
+CHE,Europe
+SYR,Asia
+TWN,Asia
+TJK,Asia
+TZA,Africa
+THA,Asia
+TGO,Africa
+TKL,Oceania
+TON,Oceania
+OWID_TRS,Europe
+TTO,North America
+TUN,Africa
+TUR,Asia
+TKM,Asia
+TCA,North America
+OWID_TUS,Europe
+TUV,Oceania
+OWID_SIC,Europe
+OWID_USS,Europe
+UGA,Africa
+UKR,Europe
+ARE,Asia
+GBR,Europe
+USA,North America
+UMI,Oceania
+VIR,North America
+URY,South America
+UZB,Asia
+VUT,Oceania
+VAT,Europe
+VEN,South America
+VNM,Asia
+WLF,Oceania
+OWID_GFR,Europe
+ESH,Africa
+OWID_WRT,Europe
+YEM,Asia
+OWID_YAR,Asia
+OWID_YPR,Asia
+OWID_YGS,Europe
+ZMB,Africa
+OWID_ZAN,Africa
+ZWE,Africa
