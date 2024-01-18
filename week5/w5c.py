@@ -178,7 +178,103 @@ df.to_csv("w5export.csv")
 #print(dx)
 
 
-print(df['NameHash'].value_counts())
 
 
 print(df['Continent'].value_counts(normalize=True).to_dict())
+
+customer_visit_count = df['DocIDHash'].value_counts().to_dict()
+print(list(customer_visit_count.items())[0:10])
+
+
+EMPTY_PASSPORT_NUMBER = '0x5FA1E0098A31497057C5A6B9FE9D49FD6DD47CCE7C268E6548699E78E587AAEA'
+customer_visit_count[EMPTY_PASSPORT_NUMBER] = 1
+
+df['CustomerVisitCount'] = df['DocIDHash'].map(customer_visit_count)
+#        VALUE                 KEY
+
+"""
+[
+    ('0xF0F3DBC14E608DB89EB4A499B8DB16A8256AE765AEDFF8BC366FC64A019D1CBD', 15), 
+    ('0xC397E9F80FD9A9AB7365734240F585038E9EBCCE93D875C631D0B56A35C5A59D', 12), 
+    ('0xFAA092BD2DEC4643F642489240C07CAE8311FA20C376B3D3D6B62BCA5DA7F9E1', 10), 
+    ('0xB73465DE229AC416DDED0A4DDFADB1428922CDDFFC84FF206EA7868784E04DEA', 10), 
+    ('0x2D2771E932895A19D4BE999D2BD051F9E2B2ED0EF6F78D43892FEBFC460CA0D4', 10), ('0x7288D12D383C94B2D140A2045711DD48205EF14F389D755763E10FEEA2AB4211', 10), ('0x8DBF728E57E5FB92CB3700DF0984EC95DAD747A909A4C17719CFBB246AC4AE99', 8), ('0xF1073F20EE929DF91282F6FB3E1E13487BD56374B2A14600510234169CB23F10', 8), ('0x92640ECE7E2404E1412ED6DE32C5AF3C0C4F0CE74D9FF202A063B9123F2EDA7E', 7), ('0x912269DC9D88AC85354919F387AEF172B6F5DA0EE13FF5B224C651C2DB78E975', 7)]
+"""
+
+print(df['DocIDHash'].value_counts())
+
+
+df = df.sort_values( 'NameHash' )
+
+da = df[ df['DocIDHash'] == '0x5FA1E0098A31497057C5A6B9FE9D49FD6DD47CCE7C268E6548699E78E587AAEA' ][['NameHash', 'DocIDHash', 'Nationality']]
+# SORT, ORDER
+print(da)
+da.to_csv("w5da.csv")
+
+
+
+yaslar = {
+    18: 'YOUNG',
+    19: 'YOUNG',
+    20: 'YOUNG',
+    21: 'YOUNG',
+    22: 'YOUNG',
+    23: 'YOUNG',
+    23: 'YOUNG',
+    24: 'YOUNG',
+
+    60: 'OLD',
+    61: 'OLD',
+    62: 'OLD',
+    63: 'OLD',
+}
+
+def AgeType( age: int ) -> str:
+    if age < 20: 
+        return 'TEEN'
+    if age < 30: 
+        return 'VERY-YOUNG'
+    if age < 40: 
+        return 'YOUNG'
+    if age < 60: 
+        return 'MIDDLE AGE'
+    return 'OLD'
+
+
+def CustomerType(nationality:str) -> str:
+    if nationality == 'PRT':
+        return 'local'
+    if nationality in ['AUT', 'BEL', 'BGR', 'HRV', 'CYP', 'CZE', 'DNK', 'EST', 'FIN', 'FRA', 'DEU', 'GRC', 'HUN', 'IRL', 'ITA', 'LVA', 'LTU', 'LUX', 'MLT', 'NLD', 'POL', 'PRT', 'ROU', 'SVK', 'SVN', 'ESP', 'SWE']: #Europe Union Countries
+        return 'europe'
+    return 'other'
+
+# %90
+europe_countries = [c for c, continent in continent_dictionary.items() if continent == 'Europe']
+
+
+
+#! df['Age-YOUNG-OLD'] = df['Age'].map(yaslar)
+#! df['Age-YOUNG-OLD'] = df['Age'] >= 60
+
+df['Age-YOUNG-OLD'] = df['Age'].apply(AgeType)
+df['CustomerType'] = df['Nationality'].apply(CustomerType)
+
+print( df.query("Nationality=='AZE'")['Age'].count() )
+print( df[ df['Nationality'] == 'AZE' ]['Age'].count() )
+
+
+for g in df.groupby( by = ['Nationality'] ): # ==> SUB GROUPS
+    #* name of the group = g[0]
+    #* data of the group = g[1]
+    print("==================")
+    print(g[0])
+    print(g[1]['Age'].mean())
+
+
+#* ALL DATA == POPULATION [ALL PEOPLE IN AZERBAIJAN]
+#* survey, poll ==> SUB PART, SMALL PART, SMALL PARTITION, SMALL GROUP ==> SAMPLE
+# SHUFFLE
+# RANDOMLY SELECT
+print(df.sample(n = 1000))
+print(df.sample(frac = 0.10))
+
