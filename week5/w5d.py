@@ -19,7 +19,7 @@ print(df['OCCUPATION_TYPE'].value_counts(normalize=True))
 
 print(df['OCCUPATION_TYPE'].describe())
 
-for g in df.groupby(by = ['REGION_RATING_CLIENT_W_CITY']):
+for g in df.groupby(by = ['REGION_RATING_CLIENT']):
     print(g[0])
     print(g[1]['AMT_INCOME_TOTAL'].mean())
 
