@@ -29,3 +29,7 @@ The closest two countries (which has closest ages) are Azerbaijan and England wh
  
 
 Question 3- For the dataframe in question 1, I want to get customers with Age greater than 30 and less than 20. 
+
+
+NOTE: If you want you can use a dataset like below : 
+https://www.kaggle.com/datasets/abhishekrp1517/sales-data-for-economic-data-analysis
