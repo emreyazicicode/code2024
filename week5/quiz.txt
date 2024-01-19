@@ -1,0 +1,31 @@
+Question 1- I have table as following  (3 columns of 10.000 rows) 
+
+ 
+
+Name: str 
+
+Gender: str 
+
+Age: int 
+
+Country: str  ( Azerbaijan, Turkiye, USA, England …. ) 
+
+ 
+
+I want to get a (subset) sample of the dataframe. But, I want to get a subset where number of customers from each country are same (so the resulting table must have EQUAL size of each country) 
+
+ 
+
+Write a code in python using pandas to achieve this 
+
+ 
+
+Question 2- For the dataframe in question 1, find the "two" countries, where their average age is very close. For example, the average age of customer in Turkey is 45, Usa is 48, Azerbajian is 38, England is 39. 
+
+ 
+
+The closest two countries (which has closest ages) are Azerbaijan and England where the difference is only 1 
+
+ 
+
+Question 3- For the dataframe in question 1, I want to get customers with Age greater than 30 and less than 20. 
