@@ -77,6 +77,8 @@ def parse(value):
     if s == ' ': return 0
     return float(s)
 
+
+
 """
 df['Churn'] = df['Churn'].map({'Yes': 1, 'No': 0})
 
