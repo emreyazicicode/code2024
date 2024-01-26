@@ -57,13 +57,3 @@ for n1 in numeric:
             plt.cla()
     
 """
-
-log
-log2
-sqrt = 0.5
-np.power( df['totcalls'], 0.2)
-np.power( df['totcalls'], 0.6)
-np.power( df['totcalls'], 0.8)
-sin/cos/tan
-np.power( df['totcalls'], 1.5)
-np.power( df['totcalls'], 2.0)
