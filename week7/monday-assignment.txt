@@ -6,4 +6,5 @@ First Task: From the "w6_Online Retail.csv" file, analyze the "InvoiceDate" colu
 Second Task: Take a raw dataset and perform feature engineering. This can include creating new features, transforming existing features, and encoding categorical variables. Explain the rationale behind each decision.
 
 
+Additional: https://www.linkedin.com/pulse/why-feature-mining-most-important-thing-data-science-emre-yazici/
 
