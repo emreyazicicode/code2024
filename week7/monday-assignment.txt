@@ -1,3 +1,9 @@
 
 
-From the "w6_Online Retail.csv" file, analyze the "InvoiceDate" column and extract at least 10 different columns
+First Task: From the "w6_Online Retail.csv" file, analyze the "InvoiceDate" column and extract at least 10 different columns
+
+
+Second Task: Take a raw dataset and perform feature engineering. This can include creating new features, transforming existing features, and encoding categorical variables. Explain the rationale behind each decision.
+
+
+
