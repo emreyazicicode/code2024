@@ -1,0 +1,1 @@
+Using the file w7e.py, find the most discriminant distribution, try for each scalar column
