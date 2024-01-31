@@ -1,0 +1,9 @@
+
+
+
+Company Info (established etc..)
+Sector, How big is it, # of employees
+Financials, Customer count, etc...
+Rivals ....
+What Kind of projects can be done in data science for this company.
+End.
