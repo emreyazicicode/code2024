@@ -1,1 +1,1 @@
-https://www.kaggle.com/datasets/safrin03/predictive-analytics-for-customer-churn-dataset?select=train.csv
+https://www.kaggle.com/datasets/merishnasuwal/auto-insurance-churn-analysis-dataset?select=autoinsurance_churn.csv
