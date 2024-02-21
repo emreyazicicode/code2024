@@ -37,6 +37,75 @@ df = df.dropna()
 df = df.select_dtypes(exclude = ['object'])
 
 
+#* business_or_commercial  =  flag
+#* LTV  =  scalar
+
+def f( row ):
+    t = 20
+    if row['business_or_commercial'] == 0:
+        if row['LTV'] > t:
+            return 1
+        else:
+            return 2
+    elif row['business_or_commercial'] == 1:
+        if row['LTV'] > t:
+            return 3
+        else:
+            return 4
+    
+
+# mynewfeature_1 -0.11525550013739266
+# mynewfeature_3 0.11952511973837814
+
+
+
+df['mynewfeature'] = df.apply(f, axis = 1)
+df = pd.get_dummies(df, columns = ['mynewfeature'])
+
+for c in df:
+    if 'mynewfeature' in c:
+        print(c, df[target].corr(df[c]) )
+
+# df = df[ df['business_or_commercial'] == 0 ]
+# del df['business_or_commercial']
+
+#print(df['LTV'].corr(df[target]))
+#df['t1'] = np.power(df['LTV'], 3.5)
+
+# df['LTV'] > df['LTV'].quantile(0.75)
+#print(df['t1'].corr(df[target]))
+
+
+pos = {}
+neg = {}
+for c in df:
+    if c != target:
+        corr = df[c].corr(df[target])
+
+        if abs(corr) > 0.03:
+            if corr > 0:
+                pos[c] = abs(corr)
+            else:
+                neg[c] = abs(corr)
+
+for c in df:
+    if df[c].nunique() > 2:
+        df[c] = (df[c] - df[c].min()) / (df[c].max() - df[c].min())
+
+def f2( row ):
+    total = 0
+    for c in pos:
+        total = total + row[c] * pos[c]
+    return total
+
+df['pos'] = df.apply(f2, axis = 1)
+
+print(df[target].corr(df['pos']))
+
+# DIG = detective
+
+
+
 #* Resample data, shuffle
 df = df.sample(frac = 1.0)
 
@@ -79,6 +148,23 @@ clf = RandomForestClassifier(max_depth=7, random_state=0)
 #* Train
 clf.fit(train_X, train_y)
 
+#! VERY IMPORTANT
+#! correlation values are not related 
+# a = 0.90
+# b = 0.70
+# c = 0.10
+
+#! feature_importances_ = sum ===> 1 sum must be 1.0
+#! percetange distribution
+print( dict(zip(train_X.columns, clf.feature_importances_ )))
+
+#! DO NOT COMPARE CORRELATION AND FEATURE IMPORTANCE DIRECTLY
+#! COMPARE THEM IN THEIR OWN VALUES
+
+#! FEATURE IMPORTANCE IS MORE "IMPORTANT", "RELIABLE", "TRUSTED", "USEFUL"
+#! BUT WE HAVE TO BUILD / TRAIN A MODEL
+#! ALSO, FEATURE IMPORTANCE SHOWS THE IMPORTANCE ACCORDING TO "THE" ALGORITHM
+
 tahmin = clf.predict(test_X)
 prob = clf.predict_proba( test_X )
 prob = prob[:,1] #* predict_proba returns the probability of "0 zeros" and "1 ones", we only take ones
@@ -91,4 +177,6 @@ test_X['real'] = test_y
 test_X['prob'] = prob
 
 test_X.sample(n = 5000).to_csv("w9-output.csv")
+
+
 
