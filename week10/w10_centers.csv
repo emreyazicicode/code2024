@@ -1,0 +1,13 @@
+DaysSinceCreation,AverageLeadTime,PersonsNights,DaysSinceLastStay,DaysSinceFirstStay,SRHighFloor,SRKingSizeBed,SRTwinBed,SRAwayFromElevator,SRQuietRoom,cluster_index,count,features,
+0.188,0.08,0.031,0.108,0.108,0,1,0.005,0.002,0.124,0,14826,"Yeni müşteri, çok kısa zaman önce haber< veren, yakın zaman otelde kaldı, king size bed istemiş, sessiz oda seviyor",.....
+0.42,0.11,0.039,0.37,0.367,0,0,0,0.002,0.058,1,38990,"uzun zamandır müşteri, bize rezervasyon bilgisini önceden söylüyor, 3-4 ay önce otelde kaldı, hiç bir özel yatak tercihi yok",ORDINARY
+0.382,0.097,0.043,0.326,0.324,1,0.665,0.005,0.034,0.17,2,3187,"uzun zamandır müşteri, önceden söylemiyor, high floor kind size bed, sessiz",VIP
+0.394,0.144,0.041,0.343,0.34,0.058,0.009,1,0.003,0.101,3,11330,,
+0.67,0.155,0.057,0.663,0.66,0.001,1,0.003,0.004,0.13,4,11478,"kohne musteri, önceden haber verir, king size, sessiz",
+,,,,,,,,,,,,,
+0.67,0.155,0.057,0.663,0.66,1,1,1,0.034,0.17,,,,
+0.188,0.08,0.031,0.108,0.108,0,0,0,0.002,0.058,,,,18.53%
+0.482,0.075,0.026,0.555,0.552,1,1,1,0.032,0.112,,,,48.74%
+,,,,,,,,,,,,,3.98%
+0.1717707774914,0.031586389473949,0.009444575162494,0.198013888401799,0.197008121659997,0.441324370503148,0.50305337688957,0.445764848322521,0.014,0.04111933851608,0.205308568642096,,,14.16%
+,,,,,,,,,,,,,14.35%
