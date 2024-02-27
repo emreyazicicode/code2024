@@ -56,9 +56,9 @@ df['cluster_index'] = cluster_indexes
 df.to_csv("w10_indexes.csv")
 
 # NOTE
-# If there are too many items in a cluster (%90), no need cluster
-# If there are very few items in a cluster (%1), no need cluster
-# If a feature is same or very similar for each cluster, ignore the feature
+#* If there are too many items in a cluster (%90), no need cluster
+#* If there are very few items in a cluster (%1), no need cluster
+#* If a feature is same or very similar for each cluster, ignore the feature
 
 cols = list(df.columns)
 cols.append('count')

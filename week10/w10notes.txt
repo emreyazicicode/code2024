@@ -1,0 +1,13 @@
+How can we measure quality of the data
+- how many nulls in the column, what is ratio of being null(!) --> bad
+- what is the "age" of the data (business, database) --> kohne --> bad
+- what is the "source" of the data (income), (bank cashier 3.000, customer, government) reliable --> good
+- are there any inconsistencies? (relation)
+- range (range of values, are they in correct range) [outlier], 
+- valid date, time, email
+- randomly select & verify
+
+
+How can we keep the data with high quality (ensure)
+- we can periodically check the upper statements
+- Data Drift Management 
