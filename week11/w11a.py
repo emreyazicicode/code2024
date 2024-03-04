@@ -32,7 +32,6 @@ df[TARGET] = df[TARGET].apply(transformDollar)
 #: Transform into a "LOWER" information
 # NOTE, Correlation only looks for "non-empty"
 
-
 #: Remove the columns which have mostly NULL
 del df['host_acceptance_rate']
 del df['square_feet']
@@ -100,6 +99,12 @@ def findWords( df, columnname: str ) -> dict:
 
     return newoutput
 
+
+
+df = df.sort_values(by = [TARGET])
+ucuz = df[ 0:  int(len(df) / 2)]
+bahali = df[ int(len(df) / 2): ]
+
 """
 #* To find the differnet keywords used in "bahali" and "ucuz" houses
 df_high = df[ df['price'] > df['price'].mean() ] #* The items which are greater than 214 [ expensive ]
@@ -127,7 +132,7 @@ df['wcname'] = df['name'].apply(lambda value: len(value.split(' ')))
 del df['name']
 
 
-# TODO house_rules summary	space	description neighborhood_overview notes, transit, access, interaction,  -> these will be done, afternoon assignment
+# TODO host_about house_rules summary	space	description neighborhood_overview notes, transit, access, interaction,  -> these will be done, afternoon assignment
 
 #* Because there is only ONE value for the experiences_offered, we delete it
 del df['experiences_offered']
@@ -139,5 +144,69 @@ print(df['house_rules'].corr(df[TARGET]))
 #* We do not need this, because we already have host_since
 del df['host_id']
 
-
+#* from what time, the customer is with us
 df['host_since'] = pd.to_datetime( df['host_since'] ).dt.year
+
+#* NOTE, you can convert it to, FIRST, SECOND, THRID AND OTHERS?
+#! can also use df['host_location'] == df['host_location'].most()[0]
+df['host_location'] = df['host_location'] == 'Sydney, New South Wales, Australia'
+del df['host_location']
+
+"""
+IT DID NOT WORK OUT
+df = pd.get_dummies(df, columns = ['host_response_time'])
+for c in df:
+    if 'host_response_time' in c:
+        print(c, df[c].corr(df[TARGET]))
+"""
+
+
+del df['host_response_time']
+
+
+def target_average(df, column: str, trgt):
+    d = df.groupby(by = [column]).agg({trgt:'mean'}).to_dict()[trgt]
+    df[column] = df[column].map(d)
+    print(column, df[column].corr(df[trgt]))
+    return df
+
+
+df = target_average(df, 'host_response_rate', TARGET )
+df = target_average(df, 'host_verifications', TARGET )
+
+#! IT IS NOT IMPORTANT WHEN THE OWNER HAS ANSWERED
+#! IT IS IMPORTANT THAT HE/SHE HAS ANSWERED
+
+del df['zipcode']
+
+
+df['room_type'] = df['room_type'] == 'Entire home/apt'
+
+#: We delete bed_type, because, most of the values are SAME %99
+del df['bed_type']
+
+
+
+
+df['amenities'] = df['amenities'].apply(lambda value: str(value).replace("{", "").replace("}", "").split(','))
+df['len_amenities'] = df['amenities'].apply(lambda value: len(value))
+
+print(df['len_amenities'].corr(df[TARGET]))
+
+
+"""
+
+
+medium cardinality:
+	host_neighbourhood
+	street
+	neighbourhood
+	city
+	smart_location
+	
+
+top 4 & others
+	neighbourhood_cleansed
+	property_type
+
+"""
