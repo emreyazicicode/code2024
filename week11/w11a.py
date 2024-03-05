@@ -1,3 +1,4 @@
+import matplotlib.pyplot as plt
 import sys
 import pandas as pd
 import numpy as np
@@ -100,7 +101,6 @@ def findWords( df, columnname: str ) -> dict:
     return newoutput
 
 
-
 df = df.sort_values(by = [TARGET])
 ucuz = df[ 0:  int(len(df) / 2)]
 bahali = df[ int(len(df) / 2): ]
@@ -194,6 +194,74 @@ df['len_amenities'] = df['amenities'].apply(lambda value: len(value))
 print(df['len_amenities'].corr(df[TARGET]))
 
 
+sub = df.select_dtypes(exclude = ['object'])
+sub = sub.dropna()
+
+from sklearn.decomposition import PCA
+pca = PCA(n_components=2)
+pca.fit(sub.drop(columns = [TARGET]))
+
+print(pca.explained_variance_ratio_)
+#! NOTE, DONT USE TARGET COLUMNS IN PCA
+transformed = pca.transform(sub.drop(columns = [TARGET]))  # 53x3993..
+
+
+transformed = pd.DataFrame(transformed)
+transformed.columns = ['c0', 'c1']
+transformed[TARGET] = sub[TARGET]
+transformed.to_csv("w11_pca.csv")
+
+del transformed['c0']
+
+
+#! DISADVANTAGE: ONLY WORKS FOR LINEAR RELATIONS
+# PCA = bakis acisi, point of view
+
+
+less_important_features = []
+
+for c in sub:
+    corr = abs(sub[c].corr(sub[TARGET]))
+    if corr < 0.05:
+        less_important_features.append( c )
+        print(c, corr)
+
+
+pca = PCA(n_components=1)
+pca.fit( sub[ less_important_features ] )
+sub['PCA'] = pca.transform( sub[ less_important_features] )
+
+for c in less_important_features:
+    del sub[c]
+
+
+sub.to_csv("w11_sub.csv")
+
+import numpy as np
+from sklearn.manifold import TSNE
+
+X_embedded = TSNE(n_components=3, learning_rate='auto',
+                  init='random', perplexity=3).fit_transform(sub)
+sub[TARGET] = (sub[TARGET] - sub[TARGET].min()) / (sub[TARGET].max() - sub[TARGET].min())
+
+# plt.scatter(X_embedded[:,0], X_embedded[:,1], c = sub[TARGET])
+
+fig = plt.figure()
+ax = fig.add_subplot(projection='3d')
+# For each set of style and range settings, plot n random points in the box
+# defined by x in [23, 32], y in [0, 100], z in [zlow, zhigh].
+for i in range(len(X_embedded)):
+    
+    ax.scatter(X_embedded[i][0], X_embedded[i][1], X_embedded[i][2])
+
+
+
+
+plt.show()
+
+
+
+
 """
 
 
@@ -210,3 +278,7 @@ top 4 & others
 	property_type
 
 """
+
+
+
+
