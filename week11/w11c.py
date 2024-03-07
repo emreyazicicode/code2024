@@ -13,7 +13,7 @@ for c in df:
 
 from sklearn.ensemble import IsolationForest
 
-clf = IsolationForest(max_samples=100, contamination=0.002)
+clf = IsolationForest(max_samples=100, contamination=0.01)
 clf.fit(df)
 y_pred_train = clf.predict(df)
 
